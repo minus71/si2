@@ -5,6 +5,26 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# for Heroku deployment - as described in Ap. A of ELLS book
+group :development, :test do
+  gem 'sqlite3'
+  # To use debugger
+  gem 'debugger'
+  # gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+end
+
+group :production do
+# gem 'pg'
+end
+
 gem 'sqlite3'
 
 
@@ -15,7 +35,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -34,6 +54,4 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'debugger'
 gem 'haml'
