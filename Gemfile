@@ -5,6 +5,33 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# for Heroku deployment - as described in Ap. A of ELLS book
+# BDD and TDD 
+group :test do
+  gem "rspec-rails"
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'debugger'
+  #gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+end
+
+group :production do
+# gem 'pg'
+end
+
 gem 'sqlite3'
 
 
@@ -15,7 +42,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -39,24 +66,3 @@ gem 'jquery-rails'
 # To use haml instead of erb
 gem 'haml'
 
-# BDD and TDD 
-group :test do
-  gem "rspec-rails"
-  gem 'cucumber-rails', :require => false
-  gem 'cucumber-rails-training-wheels'
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
-  gem 'simplecov'
-  gem 'factory_girl_rails'
-  gem 'faker'
-end
-
-group :development, :test do
-  gem 'sqlite3'
-  gem 'debugger'
-  #gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'database_cleaner'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'rspec-rails'
-end
