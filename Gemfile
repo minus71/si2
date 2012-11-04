@@ -35,5 +35,28 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+
+# To use haml instead of erb
 gem 'haml'
+
+# BDD and TDD 
+group :test do
+  gem "rspec-rails"
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'debugger'
+  #gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+end

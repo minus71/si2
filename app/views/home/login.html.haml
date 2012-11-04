@@ -1,0 +1,13 @@
+%h1 SI2
+- if @user_name
+  %div.user_info
+    = @user_name
+- unless @user_name
+  = form_tag '/login', :method=>'post',:class=>'login_form' do
+    %p 
+      = label :user, :account_name, 'User'
+      = text_field :user, :account_name
+    %p 
+      = label :user, :password, 'Password'
+      = text_field :user, :password
+    = submit_tag ("Login")  

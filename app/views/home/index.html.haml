@@ -1,3 +1,17 @@
 %h1 SI2
+%p
+  =@user
+- if @user_name
+  %div.user_info
+    = @user_name
+- unless @user_name
+  = form_tag '/', :method=>'post',:class=>'login_form' do
+    %p 
+      = label :user, :account_name, 'User'
+      = text_field :user, :account_name
+    %p 
+      = label :user, :password, 'Password'
+      = text_field :user, :password
+    = submit_tag ("Login")  
 %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna nunc, fermentum eu bibendum at, varius in enim. Nam luctus sem id sapien fermentum eu malesuada elit molestie. Quisque ac mi at sem pulvinar lacinia. Pellentesque et nunc at elit vulputate tempor. Curabitur in feugiat dui. Sed elementum tincidunt convallis. Vivamus non odio hendrerit metus tempor lobortis sit amet in libero. Quisque dolor metus, mattis nec scelerisque et, vulputate eu odio. Etiam ipsum arcu, elementum at rhoncus at, aliquet vitae dolor. Curabitur eu gravida ante. Aliquam mattis placerat metus, quis auctor turpis rhoncus id. Morbi in risus nec neque adipiscing vehicula quis in elit. Mauris metus ipsum, consectetur in ullamcorper et, eleifend quis ligula. Nulla posuere sapien sed felis pretium vel ultricies risus tempor. 
 %p Integer lacinia augue arcu, vitae pharetra augue. Integer blandit vestibulum lacus a venenatis. In at nunc urna, eget fermentum nulla. In blandit tortor sit amet nunc ullamcorper malesuada ultricies enim dictum. Ut euismod facilisis accumsan. Aliquam rutrum, eros eu auctor suscipit, urna velit mattis augue, vitae ultricies massa quam ac dolor. Nam diam risus, sodales non dictum ac, lacinia dictum augue. Ut a neque ipsum, ut molestie turpis. In turpis diam, mollis sit amet aliquam vitae, vulputate sed leo. Aliquam eget mauris nisl. Integer sagittis, neque non molestie tincidunt, mi lectus consectetur velit, ac pulvinar metus turpis posuere enim. Ut eu tempor dui. Quisque risus nisi, dictum at euismod eu, ultrices vel purus. 
